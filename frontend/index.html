@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Marketplace</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers@5.7.2/dist/ethers.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #4caf50;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #2c3e50;
+        }
+
+        div {
+            background-color: #ffffff;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        input {
+            width: calc(100% - 24px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        @media (max-width: 480px) {
+            div {
+                max-width: 90%;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            button {
+                font-size: 0.9rem;
+                padding: 8px 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Model Marketplace</h1>
+
+    <!-- Section for Listing a Model -->
+    <div>
+        <h3>List a New AI Model</h3>
+        <input id="modelName" placeholder="Model Name" />
+        <input id="modelDescription" placeholder="Model Description" />
+        <input id="modelPrice" type="number" placeholder="Model Price (ETH)" />
+        <button onclick="listModel()">List Model</button>
+    </div>
+
+    <div>
+        <h3>Purchase a Model</h3>
+        <input id="modelIdPurchase" type="number" placeholder="Model ID" />
+        <button onclick="purchaseModel()">Purchase</button>
+    </div>
+
+    <div>
+        <h3>Rate a Model</h3>
+        <input id="modelIdRate" type="number" placeholder="Model ID" />
+        <input id="modelRating" type="number" placeholder="Rating (1-5)" />
+        <button onclick="rateModel()">Rate</button>
+    </div>
+
+    <div>
+        <h3>Get Model Details</h3>
+        <input id="modelIdDetails" type="number" placeholder="Model ID" />
+        <button onclick="getModelDetails()">Get Details</button>
+        <pre id="modelDetails"></pre>
+    </div>
+
+    <div>
+        <h3>Withdraw Funds</h3>
+        <button onclick="withdrawFunds()">Withdraw</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
